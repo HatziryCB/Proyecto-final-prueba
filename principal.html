@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="principal.css">
+</head>
+<body>
+    <div class="titulo">
+    <h2>Banco Internacional</h2>
+    </div>
+    
+    <form>
+        <br><br>
+        <div class="cajam">
+        <document.write>Seleccione el tipo de moneda que desea gestionar</document.write>
+        <br><br>
+        
+        <select id="tipomoneda">
+            <option value="1">Dolares</option>
+            <option value="2">Quetzales</option>
+        </select>
+        </div>
+        <br><br>
+
+        <div class="cajaproc">
+        <document.write>Seleccione la acción que desea realizar</document.write>
+        <br><br>
+    
+        <select id="accion">
+            <option value= "1">Consulta de saldo</option>
+            <option value= "2">Retiro</option>              
+        </select>
+        </div>
+        
+        <div class="btn">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <center><input type="button" id="btn" value="Generar" onclick="proceso(this.form)"></center> 
+        </div>
+    </form>
+    
+    <script type="text/javascript">
+        var retiro= 0
+        var dolar= 1000
+        var quetzal= 8000
+     
+        function proceso(form){
+            var tipomoneda= document.getElementById("tipomoneda").value;
+          
+            var accion=document.getElementById("accion").value;
+
+            switch (tipomoneda) {
+                case "1":
+                    if (accion==1) {
+                        document.write("Su saldo disponible es de: $" + dolar);
+                    } else {
+                        
+                        retiro=prompt("Ingrese la cantidad que desea retirar: ")
+                        var rd= dolar-retiro
+
+                        if (retiro>dolar) {
+                            document.write("Su saldo es insuficiente para realizar esta acción");
+                        } else{
+                            document.write("Gracias por realizar su retiro, su saldo actual es de: $" + rd);
+                        }
+                    }break;
+                case "2":
+                    if (accion==2) {
+                        document.write("Su saldo disponible es de: Q" + quetzal);
+                    } else{
+                        retiro=prompt("Ingrese la cantidad que desea retirar: ")
+                        var rq= quetzal-retiro
+
+                        if (retiro>quetzal) {
+                            document.write("Su saldo es insuficiente para realizar esta acción");
+                        } else{
+                            document.write("Gracias por realizar su retiro, su saldo actual es de: Q" + rq);          
+                        }
+                    }break;
+                    
+                default:
+                    document.write("Seleccione una opción para continuar");
+                    break;
+            }
+
+        }
+        
+
+    </script>
+</body>
+</html>

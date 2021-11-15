@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>Banco Internacional</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+<form action=""   >
+    <div class="cajainicio">
+        <h1>Bienvenido al cajero automático del Banco Internacional</h1>
+        <br>
+        <h2>Inicio de sesión</h2>
+        
+    <div class="cajatexto">
+        <input type= "text" placeholder="Número de tarjeta" name="u" value="">                
+    </div>
+
+    <div class="cajatexto">
+         <input type= "password" placeholder="Número de PIN" name="c" value="">                
+    </div>
+
+    <input class="boton" type="button" name="" value="Ingresar" onclick="inicio(this.form)">
+    </div>
+</form>
+
+    <script>
+        function inicio(form){
+            if (form.u.value=="09092114813") {
+                if (form.c.value=="2021") {
+                    location="principal.html";
+                } else {
+                    alert("Se ha producido un error, intentelo de nuevo")
+                }
+            } else {
+                alert("Se ha producido un error, intentelo de nuevo")
+            }
+        }
+    </script>
+</body>
+</html>
